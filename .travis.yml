@@ -32,5 +32,5 @@ before_install:
 
 script:
   - make
-  - sudo chmod 755 minio
-  - ./minio
+  - sudo chmod 755 mc
+  - ./mc
