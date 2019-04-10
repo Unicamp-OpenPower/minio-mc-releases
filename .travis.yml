@@ -21,7 +21,7 @@ go: 1.12.1
 before_script:
   - wget https://github.com/minio/mc/archive/RELEASE.2019-04-03T17-59-57Z.zip
   - unzip RELEASE.2019-04-03T17-59-57Z.zip
-  - mv minio-RELEASE.2019-04-03T17-59-57Z mc
+  - mv mc-RELEASE.2019-04-03T17-59-57Z mc
   - cd mc
   # Add an IPv6 config - see the corresponding Travis issue
   # https://github.com/travis-ci/travis-ci/issues/8361
