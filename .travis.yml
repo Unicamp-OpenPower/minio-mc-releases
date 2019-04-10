@@ -1,0 +1,36 @@
+go_import_path: github.com/minio/mc
+
+language: go
+
+os: linux-ppc64le
+dist: trusty
+sudo: required
+env: 
+  - ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+  
+# Enable build cache
+# https://restic.net/blog/2018-09-02/travis-build-cache
+cache:
+ directories:
+   - $HOME/.cache/go-build
+   - $HOME/gopath/pkg/mod
+   - $HOME/go/pkg/mod
+
+go: 1.12.1
+
+before_script:
+  - wget https://github.com/minio/mc/archive/RELEASE.2019-04-03T17-59-57Z.zip
+  - unzip RELEASE.2019-04-03T17-59-57Z.zip
+  - mv minio-RELEASE.2019-04-03T17-59-57Z mc
+  - cd mc
+  # Add an IPv6 config - see the corresponding Travis issue
+  # https://github.com/travis-ci/travis-ci/issues/8361
+  - if [[ "${TRAVIS_OS_NAME}" == "linux-ppc64le" ]]; then sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6'; fi
+
+before_install:
+ - if [[ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]]; then nvm install 11.10.1 ; fi
+
+script:
+  - make
+  - sudo chmod 755 minio
+  - ./minio
