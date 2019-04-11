@@ -1,13 +1,14 @@
 matrix:
-  - env: version=2019-04-03T17-59-57Z
-  - env: version=2019-03-28T20-43-56Z
-  - env: version=2019-03-20T21-29-03Z
-  - env: version=2019-03-13T21-05-06Z
-  - env: version=2019-03-09T00-30-31Z
-  - env: version=2019-03-06T18-41-35Z
-  - env: version=2019-02-27T18-44-28Z
-  - env: version=2019-02-20T22-21-50Z
-  - env: version=2019-02-13T19-48-27Z
+  include:
+    - env: version=2019-04-03T17-59-57Z
+    - env: version=2019-03-28T20-43-56Z
+    - env: version=2019-03-20T21-29-03Z
+    - env: version=2019-03-13T21-05-06Z
+    - env: version=2019-03-09T00-30-31Z
+    - env: version=2019-03-06T18-41-35Z
+    - env: version=2019-02-27T18-44-28Z
+    - env: version=2019-02-20T22-21-50Z
+    - env: version=2019-02-13T19-48-27Z
   
  go_import_path: github.com/minio/mc
 
