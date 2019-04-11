@@ -10,7 +10,7 @@ matrix:
     - env: version=2019-02-20T22-21-50Z
     - env: version=2019-02-13T19-48-27Z
   
- go_import_path: github.com/minio/mc
+go_import_path: github.com/minio/mc
 
 language: go
 
