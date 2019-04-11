@@ -1,24 +1,20 @@
 matrix:
   include:
-    - env: version=2019-04-03T17-59-57Z
-    - env: version=2019-03-28T20-43-56Z
-    - env: version=2019-03-20T21-29-03Z
-    - env: version=2019-03-13T21-05-06Z
-    - env: version=2019-03-09T00-30-31Z
-    - env: version=2019-03-06T18-41-35Z
-    - env: version=2019-02-27T18-44-28Z
-    - env: version=2019-02-20T22-21-50Z
-    - env: version=2019-02-13T19-48-27Z
+    - env: version=2019-04-03T17-59-57Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-03-28T20-43-56Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-03-20T21-29-03Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-03-13T21-05-06Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-03-09T00-30-31Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-03-06T18-41-35Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-02-27T18-44-28Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-02-20T22-21-50Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-02-13T19-48-27Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
   
-go_import_path: github.com/minio/mc
-
 language: go
-
+go_import_path: github.com/minio/mc
 os: linux-ppc64le
 dist: trusty
 sudo: required
-env: 
-  - ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
   
 # Enable build cache
 # https://restic.net/blog/2018-09-02/travis-build-cache
@@ -40,6 +36,7 @@ before_script:
   - if [[ "${TRAVIS_OS_NAME}" == "linux-ppc64le" ]]; then sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6'; fi
 
 before_install:
+ - sudo apt install -y lftp
  - if [[ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]]; then nvm install 11.10.1 ; fi
 
 script:
