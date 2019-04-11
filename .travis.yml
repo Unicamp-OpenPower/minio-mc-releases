@@ -1,4 +1,15 @@
-go_import_path: github.com/minio/mc
+matrix:
+  - env: version=2019-04-03T17-59-57Z
+  - env: version=2019-03-28T20-43-56Z
+  - env: version=2019-03-20T21-29-03Z
+  - env: version=2019-03-13T21-05-06Z
+  - env: version=2019-03-09T00-30-31Z
+  - env: version=2019-03-06T18-41-35Z
+  - env: version=2019-02-27T18-44-28Z
+  - env: version=2019-02-20T22-21-50Z
+  - env: version=2019-02-13T19-48-27Z
+  
+ go_import_path: github.com/minio/mc
 
 language: go
 
@@ -19,9 +30,9 @@ cache:
 go: 1.12.1
 
 before_script:
-  - wget https://github.com/minio/mc/archive/RELEASE.2019-04-03T17-59-57Z.zip
-  - unzip RELEASE.2019-04-03T17-59-57Z.zip
-  - mv mc-RELEASE.2019-04-03T17-59-57Z mc
+  - wget https://github.com/minio/mc/archive/RELEASE.$version.zip
+  - unzip RELEASE.$version.zip
+  - mv mc-RELEASE.$version mc
   - cd mc
   # Add an IPv6 config - see the corresponding Travis issue
   # https://github.com/travis-ci/travis-ci/issues/8361
@@ -32,5 +43,5 @@ before_install:
 
 script:
   - make
-  - sudo chmod 755 mc
-  - ./mc
+  - mv mc mc-$version
+  - lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/minio-mc mc-$version"
