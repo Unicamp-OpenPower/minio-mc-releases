@@ -4,7 +4,7 @@ del_version=$(cat delete_version.txt)
 
 if [ $github_version != $ftp_version ]
 then
-    nvm install 11.10.1
+    $version=$github_version
     wget https://github.com/minio/mc/archive/RELEASE.$github_version.zip
     unzip RELEASE.$github_version.zip
     mv mc-RELEASE.$github_version mc
