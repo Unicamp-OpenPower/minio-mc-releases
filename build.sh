@@ -2,7 +2,7 @@ github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
 del_version=$(cat delete_version.txt)
 
-if [ $github_version != $ftp_version ]
+if [ "$github_version" != "$ftp_version" ]
 then
     $version=$github_version
     wget https://github.com/minio/mc/archive/RELEASE.$github_version.zip
@@ -13,7 +13,7 @@ then
     make
     mv mc mc-$github_version
     
-    if [[ $github_version > $ftp_version ]]
+    if [[ "$github_version" > "$ftp_version" ]]
     then
         lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/minio-mc/latest mc-$github_version"
         lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/minio-mc/latest/mc-$ftp_version" 
