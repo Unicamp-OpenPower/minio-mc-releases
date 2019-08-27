@@ -1,22 +1,24 @@
 matrix:
   include:
-    - env: version=2019-04-03T17-59-57Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-08-21T19-59-10Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
            go_import_path: github.com/minio/mc
-    - env: version=2019-03-28T20-43-56Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-08-14T20-49-49Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
            go_import_path: github.com/minio/mc
-    - env: version=2019-03-20T21-29-03Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-08-07T23-14-43Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
            go_import_path: github.com/minio/mc
-    - env: version=2019-03-13T21-05-06Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-07-31T19-17-35Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
            go_import_path: github.com/minio/mc
-    - env: version=2019-03-09T00-30-31Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-07-24T02-55-56Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
            go_import_path: github.com/minio/mc
-    - env: version=2019-03-06T18-41-35Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-07-17T22-13-42Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
            go_import_path: github.com/minio/mc
-    - env: version=2019-02-27T18-44-28Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-07-11T19-31-28Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
            go_import_path: github.com/minio/mc
-    - env: version=2019-02-20T22-21-50Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-07-09T23-57-06Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
            go_import_path: github.com/minio/mc
-    - env: version=2019-02-13T19-48-27Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+    - env: version=2019-07-03T18-14-53Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+           go_import_path: github.com/minio/mc
+    - env: version=2019-06-27T21-31-45Z   ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
            go_import_path: github.com/minio/mc
   
 language: go
