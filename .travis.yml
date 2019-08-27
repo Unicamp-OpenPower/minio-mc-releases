@@ -1,27 +1,18 @@
 matrix:
   include:
     - env: version=2019-08-21T19-59-10Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-           go_import_path: github.com/minio/mc
     - env: version=2019-08-14T20-49-49Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-           go_import_path: github.com/minio/mc
     - env: version=2019-08-07T23-14-43Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-           go_import_path: github.com/minio/mc
     - env: version=2019-07-31T19-17-35Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-           go_import_path: github.com/minio/mc
     - env: version=2019-07-24T02-55-56Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-           go_import_path: github.com/minio/mc
     - env: version=2019-07-17T22-13-42Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-           go_import_path: github.com/minio/mc
     - env: version=2019-07-11T19-31-28Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-           go_import_path: github.com/minio/mc
     - env: version=2019-07-09T23-57-06Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-           go_import_path: github.com/minio/mc
     - env: version=2019-07-03T18-14-53Z  ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-           go_import_path: github.com/minio/mc
     - env: version=2019-06-27T21-31-45Z   ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-           go_import_path: github.com/minio/mc
   
 language: go
+go_import_path: github.com/minio/mc
 os: linux-ppc64le
 dist: trusty
 sudo: required
