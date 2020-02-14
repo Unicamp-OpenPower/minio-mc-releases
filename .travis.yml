@@ -18,11 +18,11 @@ go: 1.13.x
 before_script:
   # Add an IPv6 config - see the corresponding Travis issue
   # https://github.com/travis-ci/travis-ci/issues/8361
-  - if [[ "${TRAVIS_OS_NAME}" == "linux-ppc64le" ]]; then sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6'; fi
+  - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6'; fi
 
 before_install:
  - sudo apt install -y lftp
- - if [[ "$TRAVIS_OS_NAME" == "linux-ppc64le" ]]; then nvm install node ; fi
+ - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then nvm install node ; fi
 
 script:
   - python3 ftp_version.py
