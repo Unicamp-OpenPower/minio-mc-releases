@@ -27,3 +27,10 @@ before_install:
 script:
   - python3 ftp_version.py
   - bash build.sh
+
+notifications:
+  slack:
+    rooms:
+      - secure: "PmL3NisIMlEOllKA6ks3EB5Y26BzJdqlZKRxAaQIWlC/voRw47PYgnUGU4J9NhNcGwQMJZF+1kvlXgQ+/TXzQU9XDLhEZt/Y3BMgiuKK48doFUjVcPkgTE2bKFqvi/Jtd/0Di9p6Z+1HjxvUlJ0lW1krY3jSFolGInfTXlj6ktPSDxkdfa3gIkPsZz6DrAVoOW/XHFOzDdRsWRe8LJTj40FFqg8VK3eRvr2uv2rM1TH9+/G6umZPArsXiPLIrJP4dZ/1CU7kIVMwDkYEt55hopMQytnYGIqKmKN7ZDygAs73cDB0zGR/EXj+4GjXcVJf7+TNnoxMgaOeKQ8wrLkk/f3GPGUy9EJgHnhmeqQVTLMEeBnidQsKNXA18TGI9qlc9jpFy5qmRl4h0+T9Q7S3uMiP2UKzKy6/dJ9TPPMDiP8fOE7WZBAxBsTCW4ySib0KZ9hUiLLNWzAYocjs6BDHHD2/CXoEmY2o+R0k6TxystmnZtB1rzX8dsbI5N3qIUz2vNlmuaGQ2ITp1HB3rxBk/ABph9VuNQmscYFcIsDftAqCRl5CZSSYR/vuvs7zw/2qp2aWsiuQ241wHmnZHqbyVNhbByj9PkhlKSsm5AkGia11O3HS3cbeyLXipfCu3i4WMbgieebYvAXQrc/DnZrLFriu+/2Pd+3wcYrVB34Slak="
+    on_success: change
+    on_failure: change
