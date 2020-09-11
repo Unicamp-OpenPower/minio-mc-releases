@@ -6,7 +6,7 @@ LOCALPATH="/home/travis/minio-mc/mc"
 REPO1="/repository/debian/ppc64el/minio-mc"
 REPO2="/repository/rpm/ppc64le/minio-mc"
 
-if [ $github_version != $ftp_version ]
+if [ "$github_version" != "$ftp_version" ]
   then
     git clone https://$USERNAME:$TOKEN@github.com/Unicamp-OpenPower/repository-scrips.git
     cd repository-scrips/
