@@ -16,7 +16,7 @@ then
     make
     mv mc mc-$github_version
     
-    if [[ $github_version > $ftp_version ]]
+    if [[ $github_version != $ftp_version ]]
     then
         lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O /ppc64el/minio-mc/latest mc-$github_version"
         #lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; rm /ppc64el/minio-mc/latest/mc-$ftp_version" 
