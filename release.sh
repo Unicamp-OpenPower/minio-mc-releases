@@ -12,7 +12,7 @@ if [ "$github_version" != "$ftp_version" ]
     cd repository-scrips/
     chmod +x empacotar-deb.sh
     chmod +x empacotar-rpm.sh
-    #sudo mv empacotar-deb.sh ..$LOCALPATH
+    sudo mv empacotar-deb.sh ..$LOCALPATH
     sudo mv empacotar-rpm.sh ..$LOCALPATH
     cd $LOCALPATH
     sudo ./empacotar-deb.sh mc mc-$github_version $github_version " "
