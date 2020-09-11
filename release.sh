@@ -12,8 +12,8 @@ if [ "$github_version" != "$ftp_version" ]
     cd repository-scrips/
     chmod +x empacotar-deb.sh
     chmod +x empacotar-rpm.sh
-    sudo mv empacotar-deb.sh ..$LOCALPATH
-    sudo mv empacotar-rpm.sh ..$LOCALPATH
+    sudo mv empacotar-deb.sh $LOCALPATH
+    sudo mv empacotar-rpm.sh $LOCALPATH
     cd $LOCALPATH
     sudo ./empacotar-deb.sh mc mc-$github_version $github_version " "
     sudo ./empacotar-rpm.sh mc mc-$github_version $github_version " " "MinIO Client (mc) provides a modern alternative to UNIX commands like ls, cat, cp, mirror, diff, find etc. It supports filesystems and Amazon S3 compatible cloud storage service (AWS Signature v2 and v4)."
