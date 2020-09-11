@@ -22,5 +22,5 @@ fi
 if [[ $github_version != $ftp_version ]]
    then
         sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O $REPO1 $LOCALPATH/mc-$github_version-ppc64le.deb"
-        sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O $REPO2 $ROOTPATH/mc-$echo "${github_version//-/$'.'}"-1.ppc64le.rpm"
+        sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O $REPO2 "$ROOTPATH/mc-$echo "${github_version//-/$'.'}"-1.ppc64le.rpm""
 fi
