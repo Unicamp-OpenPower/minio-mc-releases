@@ -12,7 +12,7 @@ then
     unzip RELEASE.$github_version.zip
     mv mc-RELEASE.$github_version mc
     cd mc
-    sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6'
+    #sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6'
     make
     mv mc mc-$github_version
     
