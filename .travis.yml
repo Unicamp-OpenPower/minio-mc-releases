@@ -27,6 +27,7 @@ before_install:
 script:
   - python3 ftp_version.py
   - bash build.sh
+  - bash release.sh
 
 notifications:
   slack:
