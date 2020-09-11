@@ -2,7 +2,7 @@ github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
 del_version=$(cat delete_version.txt)
 
-if [ "$github_version" != "$ftp_version" ]
+if [ $github_version != $ftp_version ]
 then
     $version=$github_version
     wget https://github.com/minio/mc/archive/RELEASE.$github_version.zip
