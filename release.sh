@@ -16,11 +16,12 @@ if [ "$github_version" != "$ftp_version" ]
     sudo mv empacotar-rpm.sh $LOCALPATH
     cd $LOCALPATH
     sudo ./empacotar-deb.sh mc mc-$github_version $github_version " "
+    tr '-' '.' <<<$github_version
     sudo ./empacotar-rpm.sh mc mc-$github_version $github_version " " "MinIO Client (mc) provides a modern alternative to UNIX commands like ls, cat, cp, mirror, diff, find etc. It supports filesystems and Amazon S3 compatible cloud storage service (AWS Signature v2 and v4)."
 fi
 
 if [[ $github_version != $ftp_version ]]
    then
-        sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O $REPO1 $LOCALPATH/minio-mc-$github_version-ppc64le.deb"
-        sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O $REPO2 $ROOTPATH/minio-mc-$github_version-1.ppc64le.rpm"
+        sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O $REPO1 $LOCALPATH/mc-$github_version-ppc64le.deb"
+        sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O $REPO2 $ROOTPATH/mc-$github_version-1.ppc64le.rpm"
 fi
