@@ -17,6 +17,7 @@ if [ "$github_version" != "$ftp_version" ]
     cd $LOCALPATH
     sudo ./empacotar-deb.sh mc mc-$github_version $github_version " "
     $str_version=$github_version
+    echo "$str_version"
     tr '-' '.' <<<"$str_verion"
     echo "$str_version"
     sudo ./empacotar-rpm.sh mc mc-$github_version $str_version " " "MinIO Client (mc) provides a modern alternative to UNIX commands like ls, cat, cp, mirror, diff, find etc. It supports filesystems and Amazon S3 compatible cloud storage service (AWS Signature v2 and v4)."
