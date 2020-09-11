@@ -2,7 +2,7 @@
 github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
 ROOTPATH="~/rpmbuild/RPMS/ppc64le"
-LOCALPATH="~/mc"
+LOCALPATH="/home/travis/minio-mc/mc"
 REPO1="/repository/debian/ppc64el/minio-mc"
 REPO2="/repository/rpm/ppc64le/minio-mc"
 
