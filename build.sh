@@ -15,7 +15,6 @@ then
     #sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/all/disable_ipv6'
     make
     mv mc mc-$github_version
-    pwd
     
     if [[ $github_version != $ftp_version ]]
     then
