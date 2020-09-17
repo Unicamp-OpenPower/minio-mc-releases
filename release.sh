@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 github_version=$(cat github_version.txt)
+github_version_2=$(cat github_version2.txt)
 ftp_version=$(cat ftp_version.txt)
 ROOTPATH="~/rpmbuild/RPMS/ppc64le"
 LOCALPATH="/home/travis/minio-mc/mc"
@@ -16,12 +17,12 @@ if [ "$github_version" != "$ftp_version" ]
     sudo mv empacotar-rpm.sh $LOCALPATH
     cd $LOCALPATH
     sudo ./empacotar-deb.sh mc mc-$github_version $github_version " "
-    sudo ./empacotar-rpm.sh mc mc-$github_version $echo"${github_version//-/$'.'}" " " "MinIO Client is a replacement for ls, cp, mkdir, diff and rsync commands for filesystems and object storage."
+    sudo ./empacotar-rpm.sh mc mc-$github_version $github_version_2 " " "MinIO Client is a replacement for ls, cp, mkdir, diff and rsync commands for filesystems and object storage."
 fi
 
 if [[ $github_version != $ftp_version ]]
    then
         sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O $REPO1 $LOCALPATH/mc-$github_version-ppc64le.deb"
-        
-        sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O $REPO2 $ROOTPATH/mc-$echo"${github_version//-/$'.'}"-1.ppc64le.rpm"
+
+        sudo lftp -c "open -u $USER,$PASS ftp://oplab9.parqtec.unicamp.br; put -O $REPO2 $ROOTPATH/mc-$github_version_2-1.ppc64le.rpm"
 fi
