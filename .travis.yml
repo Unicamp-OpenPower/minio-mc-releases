@@ -2,9 +2,10 @@ language: go
 go_import_path: github.com/minio/mc
 os: linux
 arch: ppc64le
+dist: bionic
 sudo: required
-env: version=2019-06-27T21-31-45Z ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
-  
+env: ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+
 # Enable build cache
 # https://restic.net/blog/2018-09-02/travis-build-cache
 cache:
@@ -22,7 +23,7 @@ before_script:
 
 before_install:
  - sudo apt install -y lftp
- - sudo apt install rpm 
+ - sudo apt install rpm
  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then nvm install node ; fi
 
 script:
