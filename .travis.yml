@@ -2,7 +2,7 @@ language: go
 go_import_path: github.com/minio/mc
 os: linux
 arch: ppc64le
-dist: focal
+dist: bionic
 sudo: required
 env: ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
 
