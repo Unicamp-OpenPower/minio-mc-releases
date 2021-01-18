@@ -2,7 +2,7 @@ language: go
 go_import_path: github.com/minio/mc
 os: linux
 arch: ppc64le
-dist: bionic
+dist: focal
 sudo: required
 env: ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
 
@@ -14,7 +14,7 @@ cache:
    - $HOME/gopath/pkg/mod
    - $HOME/go/pkg/mod
 
-go: 1.15.x
+go: 1.14.x
 
 before_script:
   # Add an IPv6 config - see the corresponding Travis issue
