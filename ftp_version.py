@@ -3,8 +3,8 @@ import requests
 html = str(
     requests.get('https://github.com/minio/mc/releases/latest')
     .content)
-index = html.find('commits')
-github_version = html[index + 16:index + 36]
+index = html.find('RELEASE.')
+github_version = html[index + 8:index + 28]
 github_version2=github_version.replace("-",".")
 
 file = open('github_version.txt', 'w')
