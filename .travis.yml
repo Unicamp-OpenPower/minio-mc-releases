@@ -4,7 +4,7 @@ os: linux
 arch: ppc64le
 dist: focal
 sudo: required
-env: ARCH=ppc64le CGO_ENABLED=0 GO111MODULE=on
+env: ARCH=ppc64le CGO_ENABLED=0 
 
 # Enable build cache
 # https://restic.net/blog/2018-09-02/travis-build-cache
@@ -14,7 +14,7 @@ cache:
    - $HOME/gopath/pkg/mod
    - $HOME/go/pkg/mod
 
-go: 1.14.x
+go: 1.17.x
 
 before_install:
  - sudo apt install -y lftp rpm python3
